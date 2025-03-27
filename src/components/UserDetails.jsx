@@ -36,7 +36,7 @@ const UserDetails = ({ selectedUser, setSelectedUser }) => {
             <div className="flex justify-evenly">
               <p>{userDetails.followers} followers</p>
               <p>{userDetails.following} follows</p>
-              <p>{(userDetails.public_repos ?? 0) + (userDetails.owned_private_repos ?? 0)} repositories</p>
+              <p>{userDetails.public_repos} repositories</p>
             </div>
           </div>
 
