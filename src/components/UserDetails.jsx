@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { githubRequest } from "../utils";
+import UserRepositories from "./UserRepositories";
 
 const UserDetails = ({ selectedUser, setSelectedUser }) => {
   const [userDetails, setUserDetails] = useState({});
 
   const goBack = () => {
     setSelectedUser(null);
+    setUserDetails({});
   }
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const UserDetails = ({ selectedUser, setSelectedUser }) => {
       setUserDetails(response);
     };
     fetchData();
-  });
+  }, [selectedUser]);
 
   return(
     <div className="h-full w-full flex flex-col gap-6">
@@ -37,6 +39,10 @@ const UserDetails = ({ selectedUser, setSelectedUser }) => {
               <p>{userDetails.followers} followers</p>
               <p>{userDetails.following} follows</p>
               <p>{userDetails.public_repos} repositories</p>
+            </div>
+
+            <div className="mt-6">
+              <UserRepositories {...{userDetails}} />
             </div>
           </div>
 
