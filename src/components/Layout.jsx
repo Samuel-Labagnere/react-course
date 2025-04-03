@@ -1,7 +1,8 @@
 import Search from "./Search";
 
 const Layout = ({ setSearchedValue, selectedUser, results, children }) => {
-  const displayResults = results ? <p className="mt-3">{results} résultat(s)</p> : null;
+  const resultsText = `${results} result${results > 1 ? 's' : ''}`
+  const displayResults = results ? <p className="mt-3">{resultsText}</p> : null;
 
   return(
     <div className="h-full w-full p-8 grid grid-cols-4 gap-3">
