@@ -10,7 +10,7 @@ const Layout = ({ setSearchedValue, selectedUser, results, children }) => {
         <Search {...{setSearchedValue, selectedUser}} />
         {displayResults}
       </div>
-      <main className="col-span-3">
+      <main className="flex justify-center items-center lg:block col-span-3">
         {children}
       </main>
     </div>
