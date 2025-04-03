@@ -23,8 +23,9 @@ const UserDetails = ({ selectedUser, setSelectedUser }) => {
     <div className="h-full w-full flex flex-col gap-6">
       <button className="btn w-fit" onClick={goBack}>Retour</button>
       <div className="basis-0 grow">
-        <div className="w-full grid grid-cols-2 gap-24">
+        <div className="w-full lg:grid grid-cols-2 gap-24">
           <div className="flex flex-col gap-3">
+            <img src={userDetails.avatar_url} className="block lg:hidden" />
             <div>
               <h2 className="text-3xl">{userDetails.name ?? userDetails.login}</h2>
               <a href={userDetails.html_url}>
@@ -46,7 +47,7 @@ const UserDetails = ({ selectedUser, setSelectedUser }) => {
             </div>
           </div>
 
-          <img src={userDetails.avatar_url} />
+          <img src={userDetails.avatar_url} className="hidden lg:block" />
         </div>
       </div>
     </div>

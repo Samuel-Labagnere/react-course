@@ -25,13 +25,13 @@ const UserRepositories = ({ userDetails }) => {
             <p>{repository.name}</p>
           </a>
           <div className="flex gap-3">
-            <p>{repository.watchers_count} watchers</p>
+            <p className="whitespace-pre">{repository.watchers_count} watchers</p>
             <span>-</span>
-            <p>{repository.stargazers_count} stars</p>
+            <p className="whitespace-pre">{repository.stargazers_count} stars</p>
             <span>-</span>
-            <p>{repository.open_issues} open issues</p>
+            <p className="whitespace-pre">{repository.open_issues} open issues</p>
             <span>-</span>
-            <p>{repository.forks} forks</p>
+            <p className="whitespace-pre">{repository.forks} forks</p>
           </div>
         </div>
       ))}
